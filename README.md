@@ -9,7 +9,7 @@ Note: I would also recommend creating a virtual environment to go along with thi
 `$ python main.py`
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. I generally try to abide by the [Conventional Commits guide](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages, but it is by no means a requirement.
 
 ## License
 [MIT](LICENSE)
