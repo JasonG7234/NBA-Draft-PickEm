@@ -18,6 +18,9 @@ KEYS = ["RealGM ID","Season","Name","Position 1","Position 2","Play Style","Heig
 @app.route("/", methods=['POST', 'GET'])
 def index():
     players = get_random_players()
+    if ('leaderboard' not in session or session['leaderboard'] == []):
+        print("getting leaderboard")
+        session['leaderboard'] = get_top_prospects_for_leaderboard()
     session['p1'] = players[0]
     session['p2'] = players[1]
     if (session["blind_mode"] == True):
@@ -26,9 +29,9 @@ def index():
         players[1]['image_link'] = 'https://basketball.realgm.com/images/nba/4.2/profiles/photos/2006/player_photo.jpg'
         players[0]['name'] = 'Player 1'
         players[1]['name'] = 'Player 2'
-        return render_template('index.html', o1 = players[0], o2 = players[1], blind=True, int=int, round=round)
+        return render_template('index.html', leaderboard = session['leaderboard'], o1 = players[0], o2 = players[1], blind=True, int=int, round=round)
     else:
-        return render_template('index.html', o1 = players[0], o2 = players[1], blind=False, int=int, round=round)
+        return render_template('index.html', leaderboard = session['leaderboard'], o1 = players[0], o2 = players[1], blind=False, int=int, round=round)
 
 # HANDLE FORM SUBMIT
 @app.route('/handle_data', methods=['POST'])
@@ -56,6 +59,14 @@ def get_random_players():
         d = player.__dict__
         d.pop('_sa_instance_state')
         players.append(d)
+    return players
+
+def get_top_prospects_for_leaderboard(): 
+    res = db.session.query(Players.name, Players.image_link, Players.draft_score).order_by(Players.draft_score.desc()).limit(10)
+    players = []
+    for player in res:
+        player_dict = { "name": player[0], "image_link": player[1], "draft_score": player[2]}
+        players.append(player_dict)
     return players
 
 def save_pick_winner(winning_player, losing_player):

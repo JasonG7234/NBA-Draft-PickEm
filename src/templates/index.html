@@ -27,34 +27,24 @@
     </head>
     <body>
         <!-- SIDEBAR -->
-        <!-- 
         <div class="menu-icon" onclick="toggleSidebar()"><i class="fa fa-bars"></i></div>
             <div class="sidebar">
-                <div class="leaderboard">
+                <div id="leaderboard">
                     <h2>Leaderboard</h2>
-                    <div id="player">
-                    <img src="https://basketball.realgm.com/images/nba/4.2/profiles/photos/2006/Cunningham_Cade_det22.jpg" alt="Player 1" width="125" height="150">
-                    <div class="info">
-                        <div class="name">Cade Cunningham</div>
-                        <div class="score">93%</div>
-                    </div>
-                    </div>
-                    <div id="player">
-                    <img src="https://basketball.realgm.com/images/nba/4.2/profiles/photos/2006/Williamson_Zion_nop22.jpg" alt="Player 2" width="125" height="150">
-                    <div class="info">
-                        <div class="name">Zion Williamson</div>
-                        <div class="score">92%</div>
-                    </div>
-                    </div>
-                    <div id="player">
-                    <img src="player3.png" alt="Player 3" width="125" height="150">
-                    <div class="info">
-                        <div class="name">Markelle Fultz</div>
-                        <div class="score">80%</div>
-                    </div>
+                    <table>
+                    {% for player in leaderboard %}
+                    <tr id="leaderboard_player">
+                        <td><img src="{{ player['image_link']}}" alt="Leaderboard picture"></td>
+                        <td class="info">
+                            <div id="leaderboard_player_name">{{ player['name'] }}</div>
+                            <div id="leaderboard_player_score">{{ player['draft_score'] }}</div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </table>
                 </div>
             </div>
-        </div> -->
+        </div>
         <form method="post" action="{{ url_for('handle_data') }}">
             <div class="content-container">
                 <!-- PLAYER 1 -->
