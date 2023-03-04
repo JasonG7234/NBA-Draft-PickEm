@@ -37,7 +37,7 @@
                         <td><img src="{{ player['image_link']}}" alt="Leaderboard picture"></td>
                         <td class="info">
                             <div id="leaderboard_player_name">{{ player['name'] }}</div>
-                            <div id="leaderboard_player_score">{{ player['draft_score'] }}</div>
+                            <div class="color-{{ round(player['draft_score']) }}" id="leaderboard_player_score" style="background-color: transparent">{{ player['draft_score'] }}</div>
                         </td>
                     </tr>
                     {% endfor %}
@@ -151,50 +151,50 @@
                             <div class="circles">
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Shooting Score</h4>
-                                    <div id="color-{{ int(round(o1['shooting_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['shooting_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['shooting_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['shooting_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Rebounding Score</h4>
-                                    <div id="color-{{ int(round(o1['rebounding_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['rebounding_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['rebounding_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['rebounding_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Passing Score</h4>
-                                    <div id="color-{{ int(round(o1['passing_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['passing_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['passing_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['passing_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Athleticism Score</h4>
-                                    <div id="color-{{ int(round(o1['athleticism_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['athleticism_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['athleticism_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['athleticism_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Shot Creation Score</h4>
-                                    <div id="color-{{ int(round(o1['shot_creation_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['shot_creation_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['shot_creation_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['shot_creation_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Finishing Score</h4>
-                                    <div id="color-{{ int(round(o1['finishing_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['finishing_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['finishing_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['finishing_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">Defense Score</h4>
-                                    <div id="color-{{ int(round(o1['defense_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['defense_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['defense_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['defense_score'], 2)) }}</span>
                                     </div>
                                 </div>
                                 <div class="circle">
                                     <h4 style="margin: 10px;">College Productivity Score</h4>
-                                    <div id="color-{{ int(round(o1['college_productivity_score'], 2)) }}" class="dot">
-                                        {{ int(round(o1['college_productivity_score'], 2)) }}
+                                    <div class="color-{{ int(round(o1['college_productivity_score'], 2)) }}" id="dot">
+                                        <span>{{ int(round(o1['college_productivity_score'], 2)) }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -307,50 +307,50 @@
                         <div class="circles">
                         <div class="circle">
                             <h4 style="margin: 10px;">Shooting Score</h4>
-                            <div id="color-{{ int(round(o2['shooting_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['shooting_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['shooting_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['shooting_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Rebounding Score</h4>
-                            <div id="color-{{ int(round(o2['rebounding_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['rebounding_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['rebounding_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['rebounding_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Passing Score</h4>
-                            <div id="color-{{ int(round(o2['passing_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['passing_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['passing_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['passing_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Athleticism Score</h4>
-                            <div id="color-{{ int(round(o2['athleticism_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['athleticism_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['athleticism_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['athleticism_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Shot Creation Score</h4>
-                            <div id="color-{{ int(round(o2['shot_creation_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['shot_creation_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['shot_creation_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['shot_creation_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Finishing Score</h4>
-                            <div id="color-{{ int(round(o2['finishing_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['finishing_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['finishing_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['finishing_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">Defense Score</h4>
-                            <div id="color-{{ int(round(o2['defense_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['defense_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['defense_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['defense_score'], 2)) }}</span>
                             </div>
                         </div>
                         <div class="circle">
                             <h4 style="margin: 10px;">College Productivity Score</h4>
-                            <div id="color-{{ int(round(o2['college_productivity_score'], 2)) }}" class="dot">
-                                {{ int(round(o2['college_productivity_score'], 2)) }}
+                            <div class="color-{{ int(round(o2['college_productivity_score'], 2)) }}" id="dot">
+                                <span>{{ int(round(o2['college_productivity_score'], 2)) }}</span>
                             </div>
                         </div>
                     </div>
