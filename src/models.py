@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 import pandas as pd
 
-df = pd.read_csv('../../data/draft_db.csv')
+df = pd.read_csv('../data/draft_db.csv')
 number_to_class = {1:'Freshman', 2:'Sophomore', 3:'Junior', 4:'Senior'}
 df['Class'] = df['Class'].replace(to_replace=number_to_class)
 df['Adjusted TOV%'] = df['Adjusted TOV%']*100

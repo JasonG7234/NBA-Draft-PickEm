@@ -27,8 +27,9 @@
     </head>
     <body>
         <!-- SIDEBAR -->
-        <div class="menu-icon" onclick="toggleSidebar()"><i class="fa fa-bars"></i></div>
+        <div class="sidebar-icon" id="menu" onclick="showSidebar()"><i class="fa fa-bars"></i></div>
             <div class="sidebar">
+                <div class="sidebar-icon" id="close" onclick="closeSidebar()"><i class="fa fa-close" style="font-size: 24px"></i></div>
                 <div id="leaderboard">
                     <h2>Leaderboard</h2>
                     <table>
@@ -370,10 +371,17 @@
     </footer>
     </form>
     <script>
-        function toggleSidebar() {
-          const sidebar = document.querySelector('.sidebar');
-          sidebar.classList.toggle('show');
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('show');
+            console.log(document.getElementById("close"));
+            document.getElementById("close").style.display = "block";
         }
-      </script>
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('show');
+            document.getElementById("close").style.display = "none";
+        }
+        </script>
     </body>
 </html>

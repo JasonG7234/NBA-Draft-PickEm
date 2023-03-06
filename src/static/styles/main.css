@@ -54,18 +54,30 @@
     background-color: #f2f2f2;
     transition: all 0.3s ease-in-out;
     z-index: 999;
+    border-right: 1px solid black;
   }
 
-  .menu-icon {
+  #menu.sidebar-icon {
     position: absolute;
     z-index: 999;
     cursor: pointer;
-    margin: -5px -5px;
-    padding: 8px;
+    margin: -1px -1px;
+    padding: 10px;
     background-color: #f2f2f2;
     border-bottom: 1px solid black;
-    border-right: 1px solid gray;
+    border-right: 1px solid black;
     border-radius: 3px;
+  }
+
+  #close.sidebar-icon {
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    margin: -1px -1px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    display: none;
   }
 
   .sidebar.show {
@@ -88,6 +100,7 @@
   }
   
   #leaderboard {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -394,7 +407,7 @@ footer img {
   }
 
   #profile-info {
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
   }
