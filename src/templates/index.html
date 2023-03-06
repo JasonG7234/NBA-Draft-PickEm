@@ -38,11 +38,12 @@
                         <td><img src="{{ player['image_link']}}" alt="Leaderboard picture"></td>
                         <td class="info">
                             <div id="leaderboard_player_name">{{ player['name'] }}</div>
-                            <div class="color-{{ round(player['draft_score']) }}" id="leaderboard_player_score" style="background-color: transparent">{{ player['draft_score'] }}</div>
+                            <div class="color-{{ round(player['draft_score']) }}" id="leaderboard_player_score" style="background-color: transparent">{{ round(player['draft_score'], 2) }}</div>
                         </td>
                     </tr>
                     {% endfor %}
                     </table>
+                    <span>Note: Currently there are not enough picks to have an accurate leaderboard, so these are the top scores for one of my draft models. This will be updated soon.</span>
                 </div>
             </div>
         </div>
