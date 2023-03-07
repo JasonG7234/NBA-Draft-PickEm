@@ -79,27 +79,6 @@ def save_pick_winner(winning_player, losing_player):
     db.session.add(pick)
     db.session.commit()
 
-import sys
-def log_exceptions(type, value, tb):
-    for line in traceback.TracebackException(type, value, tb).format(chain=True):
-        logging.exception(line)
-    logging.exception(value)
-
-    sys.__excepthook__(type, value, tb) # calls default excepthook
-
-sys.excepthook = log_exceptions
 # RUN
 if __name__ == "__main__":
-    
-    # Standard imports
-    import logging
-
-    LOGGING_FORMAT = "%(asctime)s | %(levelname)s | %(message)s [%(filename)s:%(lineno)d]"
-    LOGGING_LEVEL = logging.INFO
-    
-    logging.basicConfig(
-    filename="../logs/server.log",
-    level=LOGGING_LEVEL,
-    format=LOGGING_FORMAT)
-
     app.run(host="localhost", port=8000)
