@@ -81,4 +81,4 @@ def save_pick_winner(winning_player, losing_player):
 
 # RUN
 if __name__ == "__main__":
-    app.run(host="localhost", port=8080)
+    app.run(host="localhost", port=8000)
